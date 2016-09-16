@@ -5,13 +5,15 @@
  *  Green - pin 10
  *  Blue - pin 11
  */
-int rgbPins[3] = {9, 10, 11};
+int vermelho = 9;
+int verde = 10;
+int azul = 11;
 
 void setup()
 {
-  for(int i = 0; i < 3; i++) {
-  pinMode(rgbPins[i], OUTPUT);
-  }
+  pinMode(vermelho, OUTPUT);
+  pinMode(verde, OUTPUT);
+  pinMode(azul, OUTPUT); 
 }
 
 void loop()
@@ -31,7 +33,7 @@ void loop()
 }
  
 void setColor(long color) {
-  analogWrite(rgbPins[0], color >> 16);
-  analogWrite(rgbPins[1], color >> 8 & 0xFF);
-  analogWrite(rgbPins[2], color & 0xFF);
+  analogWrite(vermelho, color >> 16);
+  analogWrite(verde, color >> 8 & 0xFF);
+  analogWrite(azul, color & 0xFF);
 }
